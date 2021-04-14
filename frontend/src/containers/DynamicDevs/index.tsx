@@ -1,12 +1,14 @@
 import { DeveloperData } from "../../domain/posts/post";
 import { useState } from "react";
 import { DEVELOPERS_URL, LANG_URL } from "../../config/app-config";
-import { fetchPutDeveloperJson } from "../../utils/fetch-put-developer";
 import Form from "../../components/Form";
 import { fetchPostLangJson } from "../../utils/fetch-post-language";
 import { get } from "lodash";
 import validation from "../../utils/validate";
-import { postDeveloper } from "../../data/developers/post-developers";
+import {
+  postDeveloper,
+  putDeveloper,
+} from "../../data/developers/post-developers";
 import { toast } from "react-toastify";
 
 export type DynamicDevProps = {
@@ -41,7 +43,7 @@ const DynamicDevs = ({ developers }: DynamicDevProps) => {
       const developer = await postDeveloper(name, email, age, url);
       setId(developer.id);
     } else {
-      await fetchPutDeveloperJson(
+      await putDeveloper(
         `${DEVELOPERS_URL}\\${developers.id}`,
         name,
         email,

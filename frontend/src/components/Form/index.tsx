@@ -1,17 +1,4 @@
-import {
-  Container,
-  FormControl,
-  Input,
-  InputLabel,
-  Paper,
-  Typography,
-  MenuItem,
-  Select,
-} from "@material-ui/core";
 import Link from "next/link";
-import { ArrowBack } from "@material-ui/icons";
-import Button from "@material-ui/core/Button";
-import { useStyles } from "../../styles/useStyles";
 
 export type FormProps = {
   handleSubmit: (e) => void;
@@ -44,100 +31,93 @@ export default function Form({
   lang,
   setLang,
 }: FormProps) {
-  const classes = useStyles();
   return (
-    <Container maxWidth="sm" className={classes.root}>
-      <Paper className={classes.paper}>
+    <section>
+      <div>
         {!developers ? (
-          <Typography variant="h5">Cadastrar desenvolvedor</Typography>
+          <h4>Cadastrar desenvolvedor</h4>
         ) : (
           <span>
             <Link href="/">
-              <ArrowBack cursor="pointer" />
+              voltar
             </Link>
-            <Typography variant="h5">Editar desenvolvedor</Typography>
+            <h4>Editar desenvolvedor</h4>
           </span>
         )}
 
-        <form onSubmit={handleLang} className={classes.formTech}>
-          <FormControl className={classes.formControl}>
-            <InputLabel id="demo-simple-select-label">Tecnologias</InputLabel>
-            <Select
+        <form onSubmit={handleLang}>
+          <div>
+            <label id="demo-simple-select-label">Tecnologias</label>
+            <select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               value={lang}
               onChange={(event) => setLang(event.target.value)}
             >
-              <MenuItem value="Angular">Angular</MenuItem>
-              <MenuItem value="C#">C#</MenuItem>
-              <MenuItem value="Ionic">Ionic</MenuItem>
-              <MenuItem value="Javascript">Javascript</MenuItem>
-              <MenuItem value="Laravel">Laravel</MenuItem>
-              <MenuItem value="Mensageria">Mensageria</MenuItem>
-              <MenuItem value="NodeJs">NodeJs</MenuItem>
-              <MenuItem value="React">React</MenuItem>
-            </Select>
-          </FormControl>
+              <item value="Angular">Angular</item>
+              <item value="C#">C#</item>
+              <item value="Ionic">Ionic</item>
+              <item value="Javascript">Javascript</item>
+              <item value="Laravel">Laravel</item>
+              <item value="Mensageria">Mensageria</item>
+              <item value="NodeJs">NodeJs</item>
+              <item value="React">React</item>
+            </select>
+          </div>
 
-          <Button
-            className={classes.btnRegisterTechs}
-            variant="contained"
-            color="primary"
+          <button
             type="submit"
           >
             Cadastrar tecnologia
-          </Button>
+          </button>
         </form>
 
-        <form onSubmit={handleSubmit} className={classes.form}>
-          <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="name">Nome</InputLabel>
-            <Input
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="name">Nome</label>
+            <input
               id="nome"
               type="text"
               value={name}
               onChange={(event) => setName(event.target.value)}
             />
-          </FormControl>
+          </div>
 
-          <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="my-input">Email address</InputLabel>
-            <Input
+          <div>
+            <label htmlFor="my-input">Email address</label>
+            <input
               id="email"
               type="email"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
             />
-          </FormControl>
+          </div>
 
-          <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="age">Idade</InputLabel>
-            <Input
+          <div>
+            <label htmlFor="age">Idade</label>
+            <input
               id="age"
               value={age}
               onChange={(event) => setAge(event.target.value)}
             />
-          </FormControl>
+          </div>
 
-          <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="linkedin">URL do linkedin</InputLabel>
-            <Input
+          <div>
+            <label htmlFor="linkedin">URL do linkedin</label>
+            <input
               id="linkedin"
               type="url"
               value={url}
               onChange={(event) => setUrl(event.target.value)}
             />
-          </FormControl>
-          <Button
-            className={classes.btn}
-            variant="contained"
-            color="primary"
+          </div>
+          <button
             type="submit"
           >
             Cadastrar desenvolvedor
-          </Button>
+          </button>
         </form>
-      </Paper>
-    </Container>
+      </div>
+    </section>
   );
 }

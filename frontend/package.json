@@ -10,9 +10,6 @@
     "deploy:static": "next build && next export"
   },
   "dependencies": {
-    "@material-ui/core": "^4.11.3",
-    "@material-ui/icons": "^4.11.2",
-    "@material-ui/styles": "^4.11.3",
     "lodash": "^4.17.20",
     "next": "10.0.7",
     "next-auth": "^3.6.0",

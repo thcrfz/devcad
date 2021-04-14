@@ -1,33 +1,35 @@
-import Button from "@material-ui/core/Button";
-import { useStyles } from "../../styles/useStyles";
-import { Container, Paper, Typography } from "@material-ui/core";
+import {
+  BackgroundContainer,
+  MainContainer,
+  MainButton
+} from '../../styles/globalSyles';
+import { Intro, DivButton, Description } from './style';
 
 export type SignInProps = {
   handleSingIn: () => void;
 };
 
 export default function SignIn({ handleSingIn }: SignInProps) {
-  const classes = useStyles();
-
   return (
-    <Container maxWidth="sm" className={classes.root}>
-      <Paper className={classes.paper}>
-        <Typography variant="h2">DevCad</Typography>
-        <Typography variant="h5" className={classes.btn}>
-          Faça o login
-        </Typography>
-        <Typography className={classes.btn}>
-          Para acessar os recursos do site.
-        </Typography>
-        <Button
-          variant="outlined"
-          color="primary"
-          className={classes.btn}
-          onClick={handleSingIn}
-        >
-          SignIn
-        </Button>
-      </Paper>
-    </Container>
+    <BackgroundContainer>
+      <MainContainer>
+        <Intro>
+          <h2>Bem-vindo ao </h2>
+          <Description>
+            <ul>
+              <li>Cadastre</li>
+              <li>Update</li>
+              <li>Consulte</li>
+              <li>Apague</li>
+            </ul>
+            <p>Gerencie os seus desenvolvedores com suas competências.</p>
+          </Description>
+
+          <DivButton>
+            <MainButton onClick={handleSingIn}>SignIn</MainButton>
+          </DivButton>
+        </Intro>
+      </MainContainer>
+    </BackgroundContainer>
   );
 }
