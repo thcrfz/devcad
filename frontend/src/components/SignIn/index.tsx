@@ -1,9 +1,5 @@
-import {
-  BackgroundContainer,
-  MainContainer,
-  MainButton
-} from '../../styles/globalSyles';
-import { Intro, DivButton, Description } from './style';
+import { BackgroundContainer, MainContainer } from '../../styles/globalSyles';
+import { Intro, DivButton, Description, MainButton } from './style';
 
 export type SignInProps = {
   handleSingIn: () => void;

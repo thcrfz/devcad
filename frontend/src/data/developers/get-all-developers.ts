@@ -1,6 +1,6 @@
-import { DeveloperData } from "../../domain/posts/post";
-import { DEVELOPERS_URL } from "../../config/app-config";
-import { fecthJson } from "../../utils/fetch.json";
+import { DeveloperData } from '../../domain/posts/post';
+import { DEVELOPERS_URL } from '../../config/app-config';
+import { fecthJson } from '../../utils/fetch.json';
 
 export const getAllDevelopers = async (): Promise<DeveloperData[]> => {
   const url = `${DEVELOPERS_URL}`;
@@ -9,7 +9,7 @@ export const getAllDevelopers = async (): Promise<DeveloperData[]> => {
 };
 
 export const getIdDevelopers = async (
-  id: string | string[],
+  id: string | string[]
 ): Promise<DeveloperData[]> => {
   const idString = Array.isArray(id) ? id[0] : id;
   const url = `${DEVELOPERS_URL}/${idString}`;

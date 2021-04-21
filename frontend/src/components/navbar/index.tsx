@@ -1,15 +1,9 @@
-import { Navbar } from "./styles";
+import * as styled from './styles';
 
-export type logoutProps = {
-  handleLogout: () => void;
+export type NavBar = {
+  children: React.ReactNode;
 };
 
-export default function NavBar({ handleLogout }: logoutProps) {
-  return (
-    <Navbar>
-        <button onClick={handleLogout}>
-          Logout
-        </button>
-    </Navbar>
-  );
-}
+export const NavBar = ({ children }: NavBar) => {
+  return <styled.Navbar>{children}</styled.Navbar>;
+};

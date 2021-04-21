@@ -1,23 +1,23 @@
-import { toast } from "react-toastify";
+import { toast } from 'react-toastify';
 
 export const fetchPostLangJson = async (
   link: string,
   lang: string,
-  id: number,
+  id: number
 ) => {
   return await fetch(link, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify({
       name: lang,
-      developer_id: id,
-    }),
+      developer_id: id
+    })
   }).then((res) => {
-    if (res.status !== 200) return toast.error("Error ao cadastrar linguagem");
+    if (res.status !== 200) return toast.error('Error ao cadastrar linguagem');
     console.log(res.status);
-    toast.success("Linguagem cadastrada com sucesso!");
+    toast.success('Linguagem cadastrada com sucesso!');
     return res.json();
   });
 };

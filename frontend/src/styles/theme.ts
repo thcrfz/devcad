@@ -1,6 +1,6 @@
 export const theme = {
   colors: {
-    primary: '#0070f3'
+    primary: '#320264'
   },
   spacing: {
     gap: '30px'

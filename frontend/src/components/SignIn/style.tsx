@@ -68,3 +68,7 @@ export const Description = styled.div`
     padding: 0;
   }
 `;
+
+export const MainButton = styled.button`
+  padding: 0.5rem 5rem;
+`;

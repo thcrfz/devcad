@@ -1,27 +1,27 @@
-import { toast } from "react-toastify";
+import { toast } from 'react-toastify';
 
 export const fetchPostDeveloperJson = async (
   link: string,
   name: string,
   email: string,
   age: string,
-  url: string,
+  url: string
 ) => {
   return await fetch(link, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify({
       name: name,
       email: email,
       age: age,
-      url: url,
-    }),
+      url: url
+    })
   }).then((res) => {
-    if (res.status !== 200) return toast.error("Email já existe");
+    if (res.status !== 200) return toast.error('Email já existe');
     console.log(res.status);
-    toast.success("Usuário Cadastrado com sucesso!");
+    toast.success('Usuário Cadastrado com sucesso!');
     return res.json();
   });
 };

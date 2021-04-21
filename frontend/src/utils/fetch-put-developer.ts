@@ -1,27 +1,27 @@
-import { toast } from "react-toastify";
+import { toast } from 'react-toastify';
 
 export const fetchPutDeveloperJson = async (
   link: string,
   name: string,
   email: string,
   age: string,
-  url: string,
+  url: string
 ) => {
   return await fetch(link, {
-    method: "PUT",
+    method: 'PUT',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify({
       name: name,
       email: email,
       age: age,
-      url: url,
-    }),
+      url: url
+    })
   }).then((res) => {
-    if (res.status !== 200) return toast.error("Error ao editar linguagem");
+    if (res.status !== 200) return toast.error('Error ao editar linguagem');
     console.log(res.status);
-    toast.success("Usuário editada com sucesso!");
+    toast.success('Usuário editada com sucesso!');
     return res.json();
   });
 };
