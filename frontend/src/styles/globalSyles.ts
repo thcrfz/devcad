@@ -104,6 +104,5 @@ export const BackgroundContainer = styled.section`
 export const MainContainer = styled.div`
   max-width: 100%;
   margin: 0 auto;
-  height: 100vh;
   padding: ${theme.spacing.gap};
 `;

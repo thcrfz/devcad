@@ -53,3 +53,27 @@ export const descriptionSection = styled.section`
     color: #fff;
   }
 `;
+
+export const formControl = styled.div`
+  display: inherit;
+  label {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+  }
+  input {
+    width: inherit;
+    height: 2rem;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    font-family: 'Titillium Web', sans-serif;
+  }
+`;
+
+export const button = styled.button`
+  height: 10vh;
+  :hover {
+    background: ${theme.colors.primary};
+  }
+`;

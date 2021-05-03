@@ -1,4 +1,4 @@
-import { signIn, signOut, useSession } from 'next-auth/client';
+import { signIn, useSession } from 'next-auth/client';
 import React from 'react';
 import SignIn from '../components/SignIn';
 import Home from '../containers/Home';
