@@ -77,3 +77,15 @@ export const button = styled.button`
     background: ${theme.colors.primary};
   }
 `;
+
+export const Container = styled.section`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  background-image: url('/assets/img/Pattern-Randomized.svg');
+  background-position: center center;
+  background-size: cover;
+  box-shadow: 0rem 0rem 1rem 0.5rem rgba(0, 0, 0, 0.5);
+  gap: 5rem;
+  max-width: 100%;
+  padding: 2rem;
+`;

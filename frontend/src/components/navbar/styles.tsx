@@ -10,6 +10,7 @@ export const Navbar = styled.header`
   text-transform: uppercase;
   color: #ffff;
   box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.8);
+  z-index: 2;
   h2 {
     padding: 1rem;
     font-size: 2rem;

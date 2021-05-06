@@ -13,7 +13,6 @@ export const form = styled.form`
   display: grid;
   width: 60vh;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   padding: 4rem;
   box-shadow: 0.5rem 0rem 1rem 0 rgb(0 0 0 / 50%);
 `;

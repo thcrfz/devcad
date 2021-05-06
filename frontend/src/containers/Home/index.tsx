@@ -5,21 +5,26 @@ import * as styled from './styled';
 import { MainContainer } from '../../styles/globalSyles';
 import { Form } from '../../components/form';
 import React from 'react';
+import Validation from '../../utils/validate';
+import { postDeveloper } from '../../data/developers/post-developers';
+import { Card } from '../../components/Card';
+import { DeveloperData } from '../../domain/posts/post';
 
-export default function Home() {
+export type HomeProps = {
+  developers: DeveloperData[];
+};
+
+export default function Home({ developers }: HomeProps) {
   const [name, setName] = React.useState<string>('');
   const [email, setEmail] = React.useState<string>('');
   const [age, setAge] = React.useState<string>('');
   const [url, setUrl] = React.useState<string>('');
   const [tech, setTech] = React.useState<string>('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault;
-    console.log(name);
-    console.log(email);
-    console.log(age);
-    console.log(url);
-    console.log(tech);
+    Validation(name, email, age, url);
+    await postDeveloper(name, email, age, url);
   };
 
   return (
@@ -107,9 +112,39 @@ export default function Home() {
           <styled.button>Cadastrar</styled.button>
         </Form>
       </MainContainer>
-      <MainContainer>
-        <h3 id="ola">Desenvolvedores</h3>
-      </MainContainer>
+      <h6 id="ola">Desenvolvedores</h6>
+      <styled.Container>
+        {developers.map((dev) => (
+          <Card key={dev.id}>
+            <ul>
+              <li>
+                <span>Nome:</span>
+                <p>{dev.name}</p>
+              </li>
+              <li>
+                <span>Email:</span>
+                <p>{dev.email}</p>
+              </li>
+              <li>
+                <span>Idade:</span>
+                <p>{dev.age}</p>
+              </li>
+              <li>
+                <span>Linkedin</span>
+                <p>
+                  <a>{dev.url}</a>
+                </p>
+              </li>
+              <li>
+                <span>Tecnologia</span>
+                <p>Javascript</p>
+              </li>
+              <button>Editar</button>
+              <button>Excluir</button>
+            </ul>
+          </Card>
+        ))}
+      </styled.Container>
     </>
   );
 }

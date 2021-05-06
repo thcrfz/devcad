@@ -1,5 +1,6 @@
-export const fecthJson = async <T>(url: string): Promise<T> => {
-  const rawData = await fetch(url);
-  const jsonData = await rawData.json();
-  return jsonData;
+import axios from 'axios';
+
+export const fecthJson = async (url: string) => {
+  const rawData = await axios.get(url);
+  return rawData;
 };

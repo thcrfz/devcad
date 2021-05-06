@@ -3,15 +3,12 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: [
-    'airbnb-base',
-    'eslint:recommended',
-  ],
+  extends: ["airbnb-base", "eslint:recommended"],
   parserOptions: {
     ecmaVersion: 12,
-    sourceType: 'module',
+    sourceType: "module",
   },
   rules: {
-    'class-methods-use-this': 'off',
+    "class-methods-use-this": "off",
   },
 };
